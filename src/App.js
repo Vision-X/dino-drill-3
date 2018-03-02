@@ -25,10 +25,7 @@ class App extends Component {
     event.preventDefault();
     if (event.target.id === 'preview-toggle') {
         event.target.nextSibling.classList.toggle('hidden')
-        console.log("preview button was pressed");
-    } else if (event.target.id === 'submit') {
-        console.log("submit button was pressed");
-    }
+      }
   }
 
   handleChange(event) {
@@ -36,14 +33,12 @@ class App extends Component {
     let targetField = event.target.id;
     if (targetField === 'application-text') {
       this.setState({userInput: event.target.value});
-      console.log(this.state.userInput, 'userInput');
     }
   }
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log("handleSubmit occurred");
-    this.setState({successText: 'Your application was submitted'});
+    this.setState({successText: 'Your application was submitted!'});
     this.setState({userInput: ''});
     event.target.reset();
   }
